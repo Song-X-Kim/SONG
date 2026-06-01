@@ -57,3 +57,22 @@ class Solution {
 }
 
 // 이게 뭔가 생각한대로 구현을 자꾸 제대로 못하니까 슬프네영
+
+---
+
+class Solution {
+    public String solution(int n) {
+        String[] rule = {"4", "1", "2"};   // 나머지 0→"4", 1→"1", 2→"2"
+        StringBuilder sb = new StringBuilder();
+
+        while (n > 0) {
+            int r = n % 3;
+            sb.append(rule[r]);
+            n = (r == 0) ? n / 3 - 1 : n / 3;   // 나머지 0이면 윗자리에서 1 빌려옴
+        }
+
+        return sb.reverse().toString();
+    }
+}
+
+// 정석
