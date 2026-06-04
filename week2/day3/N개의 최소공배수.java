@@ -1,3 +1,33 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int[] arr) {
+	int[] next = new int[arr.length];
+	int answer = 1;
+	Arrays.sort(arr);
+	int n = arr[arr.length - 1];
+	while(n > 1) {
+		for(int i = 0; i< arr.length; i++) {
+			if (arr[i] % n != 0) break;
+			next[i] = arr[i] / n;
+			if (i == arr.length - 1) {
+				answer *= n;
+				arr = next;
+			}
+		}
+		n--;
+	}
+	for (int i : arr) answer *= i;
+        return answer;
+    }
+}
+
+// 2개 까진 되는데 3개는 안 됨
+
+---
+
+// 걍 정석 풀이입니다..
+
 class Solution {
 	public int solution(int[] arr) {
 		int answer = 1;
