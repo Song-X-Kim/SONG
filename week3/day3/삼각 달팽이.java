@@ -35,3 +35,5 @@ class Solution {
         return answer;
     }
 }
+
+// 이렇게 푸는 것보다 방향으로 하는게 낫다고 하네요..
